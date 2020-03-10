@@ -53,11 +53,19 @@ namespace Forces
             }
             catch
             {
-                MessageBox.Show
+                MessageBox.Show("Type a number in the force box, you doofus");
+                Force = 0.0;
             }
             //Parse is just reading the textbox as a number.
-            double Force = double.Parse(textBox1.Text);
-            double Angle = double.Parse(textBox2.Text);
+            try
+            {
+                Angle = double.Parse(textBox2.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Type a number in the angle box, you doofus");
+                Angle = 0.0;
+            }
 
             //Calculate Fx and Fy
             double Fx = Force * cos(Angle);
